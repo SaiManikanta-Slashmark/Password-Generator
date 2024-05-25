@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         boolean exit = false;
 
         while (!exit) {
             displayMenu();
-            int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume the newline
+            int choice = sc.nextInt();
+            sc.nextLine();
 
             switch (choice) {
                 case 1:
@@ -23,17 +23,17 @@ public class Main {
                     break;
                 case 4:
                     exit = true;
-                    System.out.println("Exiting the program. Goodbye!");
+                    System.out.println("Exiting the program.");
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-            scanner.close();
+            sc.close();
         }
     }
 
     private static void displayMenu() {
-        System.out.println("\nPassword Manager Menu:");
+        System.out.println("\n---Password Manager Menu---");
         System.out.println("1. Generate a Password");
         System.out.println("2. Check Password Strength");
         System.out.println("3. Display Password Security Tips");
@@ -49,12 +49,12 @@ public class Main {
     }
 
     private static void checkPasswordStrength() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter the password to check strength: ");
-        String password = scanner.nextLine();
+        String password = sc.nextLine();
         String strength = PasswordStrengthChecker.checkPasswordStrength(password);
         System.out.println("Password Strength: " + strength);
-        scanner.close();
+        sc.close();
     }
 
     private static void displayPasswordSecurityTips() {
