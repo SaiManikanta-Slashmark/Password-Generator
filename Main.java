@@ -6,7 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean exit = false;
-
+        System.out.println("-------------------------------------------------");
+        System.out.println("---Welcome To Password Generator Application---");
+        
         while (!exit) {
             displayMenu();
             try{
@@ -28,7 +30,9 @@ public class Main {
                         break;
                     case 4:
                         exit = true;
-                        System.out.println("Exiting the program.");
+                        System.out.println("\nExiting the program.");
+                        System.out.println("---Thank You for Using Password Generator---");
+                        System.out.println("--------------------------------------------");
                         break;
                     default:
                         System.out.println("Invalid choice. Please try again.");
@@ -41,7 +45,7 @@ public class Main {
     }
      
     private static void displayMenu() {
-        System.out.println("\n---Password Manager Menu---");
+        System.out.println("\n---Password Generator Menu---");
         System.out.println("1. Generate a Password");
         System.out.println("2. Check Password Strength");
         System.out.println("3. Display Password Security Tips");
@@ -59,7 +63,7 @@ public class Main {
 
     private static void checkPasswordStrength() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the password to check streng;th: ");
+        System.out.print("Enter the password to check strength: ");
         String password = sc.nextLine();
         String strength = PasswordStrengthChecker.checkPasswordStrength(password);
         System.out.println("Password Strength: " + strength);
@@ -69,6 +73,7 @@ public class Main {
 
     private static void displayPasswordSecurityTips() {
         System.out.println("\nPassword Security Tips:");
+        System.out.println("-------------------------");
         System.out.println("- Avoid using the same password for multiple accounts.");
         System.out.println("- Avoid character repetition.");
         System.out.println("- Avoid keyboard patterns (e.g., qwerty).");
@@ -80,12 +85,15 @@ public class Main {
     }
 
     public static boolean confirm(){
-        System.out.println("Do you want to continue:(Yes/No):");
+        System.out.println("\nDo you want to continue:(Yes/No):");
         Scanner sc = new Scanner(System.in);
         Boolean confirm = sc.nextLine().equalsIgnoreCase("Yes");
         if(confirm){
             return false;
         }else{
+            System.out.println("\nExiting the program.");
+            System.out.println("---Thank You for Using Password Generator---");
+            System.out.println("--------------------------------------------");
             return true;
         }
     }
