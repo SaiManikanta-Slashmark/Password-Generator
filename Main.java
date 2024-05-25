@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean exit = false;
@@ -14,12 +14,15 @@ public class Main {
             switch (choice) {
                 case 1:
                     generatePassword();
+                    exit = confirm();
                     break;
                 case 2:
                     checkPasswordStrength();
+                    exit = confirm();
                     break;
                 case 3:
                     displayPasswordSecurityTips();
+                    exit = confirm();
                     break;
                 case 4:
                     exit = true;
@@ -31,7 +34,7 @@ public class Main {
 
         }
     }
-
+     
     private static void displayMenu() {
         System.out.println("\n---Password Manager Menu---");
         System.out.println("1. Generate a Password");
@@ -46,14 +49,16 @@ public class Main {
         generator.getUserPreferences();
         String password = generator.generatePassword();
         System.out.println("Generated Password: " + password);
+       
     }
 
     private static void checkPasswordStrength() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the password to check strength: ");
+        System.out.print("Enter the password to check streng;th: ");
         String password = sc.nextLine();
         String strength = PasswordStrengthChecker.checkPasswordStrength(password);
         System.out.println("Password Strength: " + strength);
+        
       
     }
 
@@ -66,5 +71,17 @@ public class Main {
         System.out.println("- Avoid letter or number sequences (e.g., abc123).");
         System.out.println("- Use a mix of different character types.");
         System.out.println("- Consider using a password manager.");
+        
+    }
+
+    public static boolean confirm(){
+        System.out.println("Do you want to continue:(Yes/No):");
+        Scanner sc = new Scanner(System.in);
+        Boolean confirm = sc.nextLine().equalsIgnoreCase("Yes");
+        if(confirm){
+            return false;
+        }else{
+            return true;
+        }
     }
 }
