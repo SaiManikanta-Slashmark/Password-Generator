@@ -28,7 +28,7 @@ public class Main {
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-            sc.close();
+
         }
     }
 
@@ -54,7 +54,7 @@ public class Main {
         String password = sc.nextLine();
         String strength = PasswordStrengthChecker.checkPasswordStrength(password);
         System.out.println("Password Strength: " + strength);
-        sc.close();
+      
     }
 
     private static void displayPasswordSecurityTips() {

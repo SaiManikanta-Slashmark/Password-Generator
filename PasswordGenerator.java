@@ -27,16 +27,24 @@ public class PasswordGenerator {
 
         System.out.println("Enter desired length of the password: ");
         passwordLength = scanner.nextInt();
-        scanner.close();
+        
         buildPasswordAlphabet();
+        
     }
 
     private void buildPasswordAlphabet() {
-        if (useUppercase) passwordAlphabet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        if (useLowercase) passwordAlphabet += "abcdefghijklmnopqrstuvwxyz";
-        if (useNumbers) passwordAlphabet += "0123456789";
-        if (useSymbols) passwordAlphabet += "!@#$%^&*()_-+=<>?/{}~|";
-
+        if (useUppercase) {
+            passwordAlphabet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        }
+        if (useLowercase){
+            passwordAlphabet += "abcdefghijklmnopqrstuvwxyz";
+        } 
+        if (useNumbers){ 
+            passwordAlphabet += "0123456789";
+        }
+        if (useSymbols){
+            passwordAlphabet += "!@#$%^&*()_-+=<>?/{}~|";
+        }
         if (passwordAlphabet.isEmpty()) {
             System.out.println("No character types selected, using lowercase by default.");
             passwordAlphabet = "abcdefghijklmnopqrstuvwxyz";
