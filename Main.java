@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -8,30 +9,34 @@ public class Main {
 
         while (!exit) {
             displayMenu();
-            int choice = sc.nextInt();
-            sc.nextLine();
+            try{
+                int choice = sc.nextInt();
+                sc.nextLine();
 
-            switch (choice) {
-                case 1:
-                    generatePassword();
-                    exit = confirm();
-                    break;
-                case 2:
-                    checkPasswordStrength();
-                    exit = confirm();
-                    break;
-                case 3:
-                    displayPasswordSecurityTips();
-                    exit = confirm();
-                    break;
-                case 4:
-                    exit = true;
-                    System.out.println("Exiting the program.");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
+                switch (choice) {
+                    case 1:
+                        generatePassword();
+                        exit = confirm();
+                        break;
+                    case 2:
+                        checkPasswordStrength();
+                        exit = confirm();
+                        break;
+                    case 3:
+                        displayPasswordSecurityTips();
+                        exit = confirm();
+                        break;
+                    case 4:
+                        exit = true;
+                        System.out.println("Exiting the program.");
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            }catch(InputMismatchException e){
+                System.out.println("Invalid input. Please enter a number.");
+                sc.nextLine();
             }
-
         }
     }
      
