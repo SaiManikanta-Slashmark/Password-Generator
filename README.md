@@ -26,9 +26,10 @@ Provides general advice on creating and managing secure passwords.
 ### Installation
 1. Clone the repository:
 
-    git clone https://github.com/your-username password-generator.git
+    git clone https://github.com/SaiManikanta-Slashmark/Password-Generator.git
     cd password-generator
-2. Compile the Java files:
+   
+3. Compile the Java files:
 
     javac PasswordGenerator.java PasswordStrengthChecker.java Main.java
 
